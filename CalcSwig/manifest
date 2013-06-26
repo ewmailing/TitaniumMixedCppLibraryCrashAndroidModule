@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: My module
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2013 by Your Company
+
+
+# these should not be edited
+name: CalcSwig
+moduleid: co.lanica.calcswig
+guid: c5b762e3-53ed-413b-8061-026ed2f5367c
+platform: android
+minsdk: 3.1.1
