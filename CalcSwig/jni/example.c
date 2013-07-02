@@ -1,5 +1,8 @@
  /* File : example.c */
  
+#include "example.h"
+//#include <stdio.h>
+
 //extern "C"
 //{
  #include <time.h>
@@ -21,6 +24,22 @@
      return ctime(&ltime);
  }
 
+struct MyStruct MyStructMake(double the_x, double the_y, double the_z)
+{
+//	fprintf(stderr, "_wrap_MyStructMake\n");
+	
+	struct MyStruct ret_struct = { the_x, the_y, the_z };
+	return ret_struct;
+}
+
+struct MyStruct AddStructs(struct MyStruct struct1, struct MyStruct struct2)
+{
+	struct MyStruct ret_struct;
+	ret_struct.x = struct1.x + struct2.x;
+	ret_struct.y = struct1.y + struct2.y;
+	ret_struct.z = struct1.z + struct2.z;
+	return ret_struct;
+}
 
 void emptyCall()
 {

@@ -1,5 +1,6 @@
 
 TARGET_PLATFORM = android-17
+APP_STL := stlport_static
 #APP_STL := stlport_shared
 ifeq ($(BUILD_X86), 1)
 #	APP_ABI := armeabi armeabi-v7a x86

@@ -8,13 +8,22 @@ int fact(int n);
 int my_mod(int x, int y);
 char *get_time();
 
+struct MyStruct
+{
+	double x;
+	double y;
+	double z;
+};
+
+struct MyStruct MyStructMake(double the_x, double the_y, double the_z);
+struct MyStruct AddStructs(struct MyStruct struct1, struct MyStruct struct2);
 
 
 void emptyCall(void);
 double returnDouble(void);
 const char* returnString(void);
 void passDouble(double num);
-const char* passString(const char* str);
+void passString(const char* str);
 double passAndReturnDouble(double num);
 const char* passAndReturnString(const char* str);
 void pass2Double(double n1, double n2);

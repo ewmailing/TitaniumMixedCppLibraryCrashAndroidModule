@@ -953,11 +953,12 @@ void JS_veto_set_variable(v8::Local<v8::String> property, v8::Local<v8::Value> v
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_char swig_types[0]
-#define SWIGTYPE_p_double swig_types[1]
-#define SWIGTYPE_p_p_char swig_types[2]
-static swig_type_info *swig_types[4];
-static swig_module_info swig_module = {swig_types, 3, 0, 0, 0, 0};
+#define SWIGTYPE_p_MyStruct swig_types[0]
+#define SWIGTYPE_p_char swig_types[1]
+#define SWIGTYPE_p_double swig_types[2]
+#define SWIGTYPE_p_p_char swig_types[3]
+static swig_type_info *swig_types[5];
+static swig_module_info swig_module = {swig_types, 4, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1034,13 +1035,6 @@ SWIG_FromCharPtr(const char *cptr)
 
 
 SWIGINTERN 
-v8::Handle<v8::Value> SWIG_From_double   (double val)
-{
-  return v8::Number::New(val);
-}
-
-
-SWIGINTERN 
 int SWIG_AsVal_double (v8::Handle<v8::Value> obj, double *val)
 {
   if(!obj->IsNumber()) {
@@ -1049,6 +1043,13 @@ int SWIG_AsVal_double (v8::Handle<v8::Value> obj, double *val)
   if(val) *val = obj->NumberValue();
   
   return SWIG_OK;
+}
+
+
+SWIGINTERN 
+v8::Handle<v8::Value> SWIG_From_double   (double val)
+{
+  return v8::Number::New(val);
 }
 
 
@@ -1092,6 +1093,7 @@ SWIG_AsCharPtrAndSize(v8::Handle<v8::Value> valRef, char** cptr, size_t* psize, 
 
 
 
+SWIGV8_ClientData _MyStruct_clientData;
 
 
 v8::Handle<v8::Value> _wrap_fact(const v8::Arguments &args) {
@@ -1164,6 +1166,289 @@ v8::Handle<v8::Value> _wrap_get_time(const v8::Arguments &args) {
   
   result = (char *)get_time();
   jsresult = SWIG_FromCharPtr((const char *)result);
+  
+  return scope.Close(jsresult);
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+
+void _wrap_MyStruct_x_set(v8::Local<v8::String> property, v8::Local<v8::Value> value, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_x_set" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  ecode2 = SWIG_AsVal_double(value, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "MyStruct_x_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = (double)(val2);
+  if (arg1) (arg1)->x = arg2;
+  
+  
+  
+  goto fail;
+fail:
+  return;
+}
+
+
+v8::Handle<v8::Value> _wrap_MyStruct_x_get(v8::Local<v8::String> property, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Value> jsresult;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double result;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_x_get" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  result = (double) ((arg1)->x);
+  jsresult = SWIG_From_double((double)(result));
+  
+  
+  return scope.Close(jsresult);
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+
+void _wrap_MyStruct_y_set(v8::Local<v8::String> property, v8::Local<v8::Value> value, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_y_set" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  ecode2 = SWIG_AsVal_double(value, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "MyStruct_y_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = (double)(val2);
+  if (arg1) (arg1)->y = arg2;
+  
+  
+  
+  goto fail;
+fail:
+  return;
+}
+
+
+v8::Handle<v8::Value> _wrap_MyStruct_y_get(v8::Local<v8::String> property, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Value> jsresult;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double result;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_y_get" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  result = (double) ((arg1)->y);
+  jsresult = SWIG_From_double((double)(result));
+  
+  
+  return scope.Close(jsresult);
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+
+void _wrap_MyStruct_z_set(v8::Local<v8::String> property, v8::Local<v8::Value> value, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_z_set" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  ecode2 = SWIG_AsVal_double(value, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "MyStruct_z_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = (double)(val2);
+  if (arg1) (arg1)->z = arg2;
+  
+  
+  
+  goto fail;
+fail:
+  return;
+}
+
+
+v8::Handle<v8::Value> _wrap_MyStruct_z_get(v8::Local<v8::String> property, const v8::AccessorInfo& info) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Value> jsresult;
+  struct MyStruct *arg1 = (struct MyStruct *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double result;
+  
+  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_MyStruct, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "MyStruct_z_get" "', argument " "1"" of type '" "struct MyStruct *""'"); 
+  }
+  arg1 = (struct MyStruct *)(argp1);
+  result = (double) ((arg1)->z);
+  jsresult = SWIG_From_double((double)(result));
+  
+  
+  return scope.Close(jsresult);
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+
+v8::Handle<v8::Value> _wrap_new_MyStruct(const v8::Arguments& args) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Object> self = args.Holder();
+  struct MyStruct *result;
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_MyStruct.");  
+  result = (struct MyStruct *)calloc(1, sizeof(struct MyStruct));
+  
+  
+  
+  SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_MyStruct, SWIG_POINTER_OWN);
+  return scope.Close(self);
+  
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+#include <stdio.h>
+#ifdef __ANDROID__
+	#undef fprintf
+	#include <android/log.h>
+	#define fprintf(stderr, ...) __android_log_print(ANDROID_LOG_INFO, "ALmixer", __VA_ARGS__)
+#endif
+
+void _wrap_delete_MyStruct(v8::Persistent< v8::Value > object, void *parameter) {
+	fprintf(stderr, "_wrap_delete_MyStruct\n");
+  SWIGV8_Proxy* proxy = (SWIGV8_Proxy*) parameter;
+  if(proxy->swigCMemOwn && proxy->swigCObject) {
+    std::cout << "Deleting wrapped instance: " << proxy->info->name << std::endl;
+    delete (struct MyStruct *) proxy->swigCObject;
+  }
+  delete proxy;
+}
+
+
+v8::Handle<v8::Value> _wrap_MyStructMake(const v8::Arguments &args) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Value> jsresult;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  struct MyStruct result;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_MyStructMake.");  
+  
+  ecode1 = SWIG_AsVal_double(args[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "MyStructMake" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = (double)(val1);
+  ecode2 = SWIG_AsVal_double(args[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "MyStructMake" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = (double)(val2);
+  ecode3 = SWIG_AsVal_double(args[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "MyStructMake" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = (double)(val3);
+  result = MyStructMake(arg1,arg2,arg3);
+  jsresult = SWIG_NewPointerObj((struct MyStruct *)memcpy((struct MyStruct *)malloc(sizeof(struct MyStruct)),&result,sizeof(struct MyStruct)), SWIGTYPE_p_MyStruct, SWIG_POINTER_OWN |  0 );
+  
+  
+  
+  
+  return scope.Close(jsresult);
+  goto fail;
+fail:
+  return scope.Close(v8::Undefined());
+}
+
+
+v8::Handle<v8::Value> _wrap_AddStructs(const v8::Arguments &args) {
+  v8::HandleScope scope;
+  v8::Handle<v8::Value> jsresult;
+  struct MyStruct arg1 ;
+  struct MyStruct arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  struct MyStruct result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_AddStructs.");  
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_MyStruct,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AddStructs" "', argument " "1"" of type '" "struct MyStruct""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AddStructs" "', argument " "1"" of type '" "struct MyStruct""'");
+    } else {
+      arg1 = *((struct MyStruct *)(argp1));
+    }
+  }
+  {
+    res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_MyStruct,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AddStructs" "', argument " "2"" of type '" "struct MyStruct""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AddStructs" "', argument " "2"" of type '" "struct MyStruct""'");
+    } else {
+      arg2 = *((struct MyStruct *)(argp2));
+    }
+  }
+  result = AddStructs(arg1,arg2);
+  jsresult = SWIG_NewPointerObj((struct MyStruct *)memcpy((struct MyStruct *)malloc(sizeof(struct MyStruct)),&result,sizeof(struct MyStruct)), SWIGTYPE_p_MyStruct, SWIG_POINTER_OWN |  0 );
   
   return scope.Close(jsresult);
   goto fail;
@@ -1448,21 +1733,25 @@ fail:
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_MyStruct = {"_p_MyStruct", "struct MyStruct *|p_MyStruct", 0, 0, (void*)&_MyStruct_clientData, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_MyStruct,
   &_swigt__p_char,
   &_swigt__p_double,
   &_swigt__p_p_char,
 };
 
+static swig_cast_info _swigc__p_MyStruct[] = {  {&_swigt__p_MyStruct, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_MyStruct,
   _swigc__p_char,
   _swigc__p_double,
   _swigc__p_p_char,
@@ -1725,7 +2014,7 @@ SWIG_PropagateClientData(void) {
 
 /************  END:   "swiginit.swg" *******************/ 
 
-extern "C" {
+//extern "C" {
   void example_initialize(v8::Handle<v8::Object> global_obj)
   {
     SWIG_InitializeModule(0);
@@ -1740,21 +2029,35 @@ extern "C" {
     
     
     /* create class templates */
+    v8::Handle<v8::FunctionTemplate> _MyStruct_class = SWIGV8_CreateClassTemplate("_MyStruct");
+    _MyStruct_clientData.class_templ = _MyStruct_class;
+    _MyStruct_clientData.dtor = _wrap_delete_MyStruct;  
+    SWIGTYPE_p_MyStruct->clientdata = &_MyStruct_clientData;
     
     
     /* register wrapper functions */
+    SWIGV8_AddMemberVariable(_MyStruct_class, "x", _wrap_MyStruct_x_get, _wrap_MyStruct_x_set);
+    SWIGV8_AddMemberVariable(_MyStruct_class, "y", _wrap_MyStruct_y_get, _wrap_MyStruct_y_set);
+    SWIGV8_AddMemberVariable(_MyStruct_class, "z", _wrap_MyStruct_z_get, _wrap_MyStruct_z_set);
     
     
     /* setup inheritances */
     
     
     /* class instances */
+    v8::Handle<v8::FunctionTemplate> _MyStruct_class_0 = SWIGV8_CreateClassTemplate("MyStruct");
+    _MyStruct_class_0->SetCallHandler(_wrap_new_MyStruct);
+    _MyStruct_class_0->Inherit(_MyStruct_class);
+    _MyStruct_class_0->SetHiddenPrototype(true);
+    v8::Handle<v8::Object> _MyStruct_obj = _MyStruct_class_0->GetFunction();
     
     
     /* add static class functions and variables */
     SWIGV8_AddStaticFunction(example_obj, "fact", _wrap_fact);
     SWIGV8_AddStaticFunction(example_obj, "my_mod", _wrap_my_mod);
     SWIGV8_AddStaticFunction(example_obj, "get_time", _wrap_get_time);
+    SWIGV8_AddStaticFunction(example_obj, "MyStructMake", _wrap_MyStructMake);
+    SWIGV8_AddStaticFunction(example_obj, "AddStructs", _wrap_AddStructs);
     SWIGV8_AddStaticFunction(example_obj, "emptyCall", _wrap_emptyCall);
     SWIGV8_AddStaticFunction(example_obj, "returnDouble", _wrap_returnDouble);
     SWIGV8_AddStaticFunction(example_obj, "returnString", _wrap_returnString);
@@ -1770,6 +2073,7 @@ extern "C" {
     
     
     /* register classes */
+    example_obj->Set(v8::String::NewSymbol("MyStruct"), _MyStruct_obj);
     
     
     /* create and register namespace objects */
@@ -1777,5 +2081,5 @@ extern "C" {
     
   }
   
-} // extern "C"
+//} // extern "C"
 
